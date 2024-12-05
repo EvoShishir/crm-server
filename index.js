@@ -1,8 +1,8 @@
 import express from "express";
 import "dotenv/config";
-import { connectDB } from "./config/db.config.js";
+import { connectDB } from "./src/config/db.config.js";
 import cors from "cors";
-import authRoutes from "./routes/auth.route.js";
+import authRoutes from "./src/routes/auth.route.js";
 
 const app = express();
 app.use(express.json());
