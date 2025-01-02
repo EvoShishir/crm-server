@@ -23,13 +23,14 @@ export const login = async (req, res) => {
     const token = generateToken({
       _id: user._id,
       name: user.name,
+      email: user.email,
       role: user.role,
     });
 
     res.cookie("auth_token", token, {
       httpOnly: true, // Prevent access via JavaScript
-      secure: process.env.NODE_ENV === "production", // Use secure cookies in production
-      sameSite: "strict", // Prevent CSRF attacks
+      // secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+      // sameSite: "strict", // Prevent CSRF attacks
       maxAge: 60 * 60 * 1000, // 1 hour
     });
 
